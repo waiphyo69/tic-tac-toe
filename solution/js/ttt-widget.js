@@ -12,7 +12,7 @@
     var widget = this;
 
     // install a handler on the `li` elements inside the board.
-    this.$el.on('click', 'li', function (event) {
+    this.$el.on('click', 'div.cell', function (event) {
       var $square = $(event.currentTarget);
       widget.makeMove($square);
     });
@@ -29,7 +29,7 @@
       return;
     }
 
-    $square.addClass(currentPlayer);
+    $square.addClass("player-" + currentPlayer);
 
     if (this.game.isOver()) {
       // cleanup click handlers.
@@ -39,7 +39,7 @@
       if (winner) {
         this.$el.addClass('winner-' + winner);
       } else {
-        this.$el.addClass('over');
+        this.$el.addClass('draw');
       }
     }
   };
@@ -51,12 +51,16 @@
 
   Widget.prototype.setupBoard = function () {
     for (var rowIdx = 0; rowIdx < 3; rowIdx++) {
+      var $row = $('<div class="row"></div>');
+
       for (var colIdx = 0; colIdx < 3; colIdx++) {
-        var $li = $("<li>");
+        var $li = $('<div class="cell">');
         $li.data("pos", [rowIdx, colIdx]);
 
-        this.$el.append($li);
+        $row.append($li);
       }
+
+      this.$el.append($row);
     }
   };
 })();
