@@ -3,7 +3,7 @@
     window.TTT = {};
   }
 
-  var Widget = TTT.Widget = function (game, $el) {
+  var View = TTT.View = function (game, $el) {
     this.game = game;
     this.$el = $el;
 
@@ -11,17 +11,15 @@
     this.bindEvents();
   };
 
-  Widget.prototype.bindEvents = function () {
-    var widget = this;
-
+  View.prototype.bindEvents = function () {
     // install a handler on the `li` elements inside the board.
-    this.$el.on('click', 'div.cell', function (event) {
+    this.$el.on('click', 'div.cell', (function (event) {
       var $square = $(event.currentTarget);
-      widget.makeMove($square);
-    });
+      this.makeMove($square);
+    }).bind(this));
   };
 
-  Widget.prototype.makeMove = function ($square) {
+  View.prototype.makeMove = function ($square) {
     var pos = $square.data("pos");
     var currentPlayer = this.game.currentPlayer;
 
@@ -47,7 +45,7 @@
     }
   };
 
-  Widget.prototype.setupBoard = function () {
+  View.prototype.setupBoard = function () {
     for (var rowIdx = 0; rowIdx < 3; rowIdx++) {
       var $row = $('<div class="row"></div>');
 
