@@ -32,6 +32,7 @@
     $square.addClass(currentPlayer);
 
     if (this.game.isOver()) {
+      // cleanup click handlers.
       this.$el.off('click');
 
       var winner = this.game.winner();
