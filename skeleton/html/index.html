@@ -5,27 +5,14 @@
     <title>Tic Tac Toe</title>
     <link rel="stylesheet" type="text/css" href="../css/ttt.css">
   </head>
-
   <body>
-    <h1>Tic Tac Toe</h1>
-    <div class="ttt">
-      <div class="board"></div>
-      <div class="win-message">Winner!</div>
-      <div class="draw-message">Draw!</div>
-    </div>
-
     <script src="../js/jquery-2.1.1.js"></script>
     <!-- Whackjobs at GithubPages don't understand symlinks... -->
-    <script src="../../ttt-core-solution/ttt-core.js"></script>
+    <script src="../js/ttt-core.js"></script>
     <script src="../js/ttt-widget.js"></script>
 
     <script>
-      $(function () {
-        var game = new TTT.Game();
-        var $el = $("div.ttt");
-        var tttWidget = new TTT.Widget(game, $el);
-        tttWidget.play();
-      });
+      // Write your code here.
     </script>
   </body>
 </html>
