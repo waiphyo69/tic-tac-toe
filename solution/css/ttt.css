@@ -1,4 +1,27 @@
-div.ttt-board {
+div.ttt {
+  width: 156px;
+}
+
+div.ttt div.win-message {
+  display: none;
+}
+
+div.ttt div.draw-message {
+  display: none;
+}
+
+div.ttt.winner-x div.win-message {
+  display: block;
+  background-color: green;
+}
+
+div.ttt.winner-o div.win-message {
+  display: block;
+  background-color: red;
+}
+
+div.ttt.draw div.draw-message {
+  display: block;
 }
 
 div.row {

@@ -8,7 +8,11 @@
 
   <body>
     <h1>Tic Tac Toe</h1>
-    <div class="ttt-board"></div>
+    <div class="ttt">
+      <div class="board"></div>
+      <div class="win-message">Winner!</div>
+      <div class="draw-message">Draw!</div>
+    </div>
 
     <script src="../js/jquery-2.1.1.js"></script>
     <!-- Whackjobs at GithubPages don't understand symlinks... -->
@@ -18,7 +22,7 @@
     <script>
       $(function () {
         var game = new TTT.Game();
-        var $el = $("div.ttt-board");
+        var $el = $("div.ttt");
         var tttWidget = new TTT.Widget(game, $el);
         tttWidget.play();
       });

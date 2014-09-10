@@ -60,7 +60,7 @@
         $row.append($li);
       }
 
-      this.$el.append($row);
+      this.$el.find(".board").append($row);
     }
   };
 })();
