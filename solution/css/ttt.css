@@ -1,5 +1,11 @@
+h1 {
+  text-align: center;
+}
+
 div.ttt {
   width: 156px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 div.ttt div.win-message {
