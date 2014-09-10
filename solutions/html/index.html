@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/ttt.css">
+  </head>
+
+  <body>
+    <h1>Tic Tac Toe</h1>
+    <ul id="ttt-board" class="group"></ul>
+
+    <script src="../javascripts/jquery-2.1.1.js"></script>
+    <script src="../javascripts/ttt/ttt.js"></script>
+    <script src="../javascripts/ttt-widget.js"></script>
+
+    <script>
+      $(function () {
+        var game = new TTT.Game();
+        var $el = $("#ttt-board");
+        var tttWidget = new TTT.Widget(game, $el);
+        tttWidget.play();
+      });
+    </script>
+  </body>
+</html>
