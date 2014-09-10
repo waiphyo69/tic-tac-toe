@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-browserify lib/index.js -s TTT -o ttt-core.js
+browserify src/index.js -s TTT -o ttt-core.js

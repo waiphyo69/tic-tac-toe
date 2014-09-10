@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 var readline = require('readline');
-var TTT = require("../lib");
+var TTT = require("../src");
 
 var reader = readline.createInterface({
   input: process.stdin,
