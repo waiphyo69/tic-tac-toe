@@ -8,7 +8,7 @@ var reader = readline.createInterface({
   output: process.stdout
 });
 
-var game = new TTT.Game(reader);
-game.run(function () {
+var game = new TTT.Game();
+game.run(reader, function () {
   reader.close();
 });

@@ -126,11 +126,9 @@ module.exports = Board;
 var Board = _dereq_("./board");
 var MoveError = _dereq_("./moveError");
 
-function Game (reader) {
+function Game () {
   this.board = new Board();
   this.currentPlayer = Board.marks[0];
-
-  this.reader = reader;
 }
 
 Game.prototype.isOver = function () {
@@ -142,26 +140,25 @@ Game.prototype.playMove = function (pos) {
   this.swapTurn();
 };
 
-Game.prototype.promptMove = function (callback) {
+Game.prototype.promptMove = function (reader, callback) {
   var game = this;
 
   this.board.print();
   console.log("Current Turn: " + this.currentPlayer)
 
-  this.reader.question("Enter rowIdx: ", function (rowIdxStr) {
+  reader.question("Enter rowIdx: ", function (rowIdxStr) {
     var rowIdx = parseInt(rowIdxStr);
-    game.reader.question("Enter colIdx: ", function (colIdxStr) {
+    reader.question("Enter colIdx: ", function (colIdxStr) {
       var colIdx = parseInt(colIdxStr);
       callback([rowIdx, colIdx]);
     });
   });
 };
 
-Game.prototype.run = function (gameCompletionCallback) {
-  var game = this;
-  this.promptMove(function (move) {
+Game.prototype.run = function (reader, gameCompletionCallback) {
+  this.promptMove(reader, (function (move) {
     try {
-      game.playMove(move);
+      this.playMove(move);
     } catch (e) {
       if (e instanceof MoveError) {
         console.log(e.msg);
@@ -170,19 +167,19 @@ Game.prototype.run = function (gameCompletionCallback) {
       }
     }
 
-    if (game.isOver()) {
-      game.board.print();
-      if (game.winner()) {
-        console.log(game.winner() + " has won!");
+    if (this.isOver()) {
+      this.board.print();
+      if (this.winner()) {
+        console.log(this.winner() + " has won!");
       } else {
         console.log("NO ONE WINS!");
       }
       gameCompletionCallback();
     } else {
       // continue loop
-      game.run(gameCompletionCallback);
+      this.run(reader, gameCompletionCallback);
     }
-  });
+  }).bind(this));
 };
 
 Game.prototype.swapTurn = function () {
