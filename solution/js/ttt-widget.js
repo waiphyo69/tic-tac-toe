@@ -6,6 +6,9 @@
   var Widget = TTT.Widget = function (game, $el) {
     this.game = game;
     this.$el = $el;
+
+    this.setupBoard();
+    this.bindEvents();
   };
 
   Widget.prototype.bindEvents = function () {
@@ -42,11 +45,6 @@
         this.$el.addClass('draw');
       }
     }
-  };
-
-  Widget.prototype.play = function () {
-    this.setupBoard();
-    this.bindEvents();
   };
 
   Widget.prototype.setupBoard = function () {

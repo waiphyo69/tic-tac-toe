@@ -12,9 +12,6 @@
   Widget.prototype.makeMove = function ($square) {
   };
 
-  Widget.prototype.play = function () {
-  };
-
   Widget.prototype.setupBoard = function () {
   };
 })();

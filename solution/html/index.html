@@ -21,10 +21,7 @@
 
     <script>
       $(function () {
-        var game = new TTT.Game();
-        var $el = $("div.ttt");
-        var tttWidget = new TTT.Widget(game, $el);
-        tttWidget.play();
+        new TTT.Widget(new TTT.Game(), $("div.ttt"));;
       });
     </script>
   </body>
