@@ -2,4 +2,4 @@
 
 [Live Demo][live-demo]
 
-[live-demo]: http://appacademy.github.io/ttt.js/
+[live-demo]: http://appacademy.github.io/ttt.js/solution/html/index.html

@@ -1,1 +1,0 @@
-../../ttt-core-solution/ttt.js
