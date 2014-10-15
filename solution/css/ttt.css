@@ -1,61 +1,93 @@
+html, body, figure, figcaption, ul, li, h1 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.group:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+body {
+  font-family: sans-serif;
+}
+
 h1 {
   text-align: center;
+  font-weight: bold;
+  font-size: 60px;
+  margin: 30px;
 }
 
-div.ttt {
-  width: 156px;
-  margin-left: auto;
-  margin-right: auto;
+ul {
+  margin: 30px auto;
+  width: 300px;
+  border: 5px solid black;
 }
 
-div.ttt div.win-message {
-  display: none;
+li {
+  float: left;
+  width: 90px;
+  height: 90px;
+  border: 5px solid black;
+  background: gray;
+  cursor: pointer;
 }
 
-div.ttt div.draw-message {
-  display: none;
+li:hover {
+  background: yellow;
 }
 
-div.ttt.winner-x div.win-message {
+.x,
+.o {
+  background: white;
+  cursor: default;
+}
+
+.x:hover,
+.o:hover {
+  background: white;
+}
+
+.x:after,
+.o:after {
   display: block;
-  background-color: green;
+  width: 100%;
+  font-size: 60px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 80px;
 }
 
-div.ttt.winner-o div.win-message {
-  display: block;
-  background-color: red;
+.x:after {
+  content: "x";
 }
 
-div.ttt.draw div.draw-message {
-  display: block;
+.o:after {
+  content: "o";
 }
 
-div.row {
-  margin: 0;
-  padding: 0;
+.game-over li {
+  color: red;
+  cursor: default;
+  background: white;
 }
 
-div.cell {
-  display: inline-block;
-  /* Why?? */
-  vertical-align: top;
-
-  width: 50px;
-  height: 50px;
-
-  border: 1px solid black;
-  margin: 0;
-  padding: 0;
+.winner-x .x,
+.winner-o .o {
+  background: green;
+  color: white;
 }
 
-div.cell.player-x {
-  background-color: green;
-}
-
-div.cell.player-o {
-  background-color: red;
-}
-
-div.cell:hover:not(.player-x):not(.player-o) {
-  background-color: yellow;
+figcaption {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
 }
