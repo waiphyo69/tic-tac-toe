@@ -2,40 +2,40 @@ h1 {
   text-align: center;
 }
 
-div.ttt {
+.ttt {
   width: 156px;
   margin-left: auto;
   margin-right: auto;
 }
 
-div.ttt div.win-message {
+.ttt div.win-message {
   display: none;
 }
 
-div.ttt div.draw-message {
+.ttt div.draw-message {
   display: none;
 }
 
-div.ttt.winner-x div.win-message {
+.ttt.winner-x div.win-message {
   display: block;
   background-color: green;
 }
 
-div.ttt.winner-o div.win-message {
+.ttt.winner-o div.win-message {
   display: block;
   background-color: red;
 }
 
-div.ttt.draw div.draw-message {
+.ttt.draw div.draw-message {
   display: block;
 }
 
-div.row {
+.row {
   margin: 0;
   padding: 0;
 }
 
-div.cell {
+.cell {
   display: inline-block;
   /* Why?? */
   vertical-align: top;
@@ -48,14 +48,14 @@ div.cell {
   padding: 0;
 }
 
-div.cell.player-x {
+.cell.player-x {
   background-color: green;
 }
 
-div.cell.player-o {
+.cell.player-o {
   background-color: red;
 }
 
-div.cell:hover:not(.player-x):not(.player-o) {
+.cell:hover:not(.player-x):not(.player-o) {
   background-color: yellow;
 }
