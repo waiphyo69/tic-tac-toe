@@ -66,10 +66,12 @@ li:hover {
 }
 
 .x:after {
+  color: blue;
   content: "x";
 }
 
 .o:after {
+  color: purple;
   content: "o";
 }
 
@@ -81,7 +83,7 @@ li:hover {
 
 .winner-x .x,
 .winner-o .o {
-  background: green;
+  background: cadetblue;
   color: white;
 }
 
