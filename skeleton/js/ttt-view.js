@@ -5,22 +5,20 @@
 
   var View = TTT.View = function (game, $el) {
     this.game = game;
-    this.container = $el;
+    this.$container = $el;
     this.setupBoard();
     this.bindEvents();
   };
 
   View.prototype.bindEvents = function () {
     var view = this;
-    $(function(){
-      view.container.on("click", "li", function(event){
-        var pos = $(this).data("pos");
-        view.makeMove($(this));
-        view.game.playMove(pos);
-        if (view.game.isOver()) {
-          view.handleGameOver();
-        }
-      })
+    view.$container.on("click", "li", function(event){
+      var pos = $(this).data("pos");
+      view.makeMove($(this));
+      view.game.playMove(pos);
+      if (view.game.isOver()) {
+        view.handleGameOver();
+      }
     })
   };
 
@@ -50,6 +48,6 @@
         $grid.append($square);
       }
     };
-    this.container.append($grid);
+    this.$container.append($grid);
   };
 })();

@@ -16,8 +16,10 @@
 
     <script>
       // Write your code here.
-      var game = new TTT.Game();
-      var view = new TTT.View(game, $('#game'));
+      $(function(){
+        var game = new TTT.Game();
+        var view = new TTT.View(game, $('#game'));
+      })
     </script>
   </body>
 </html>
