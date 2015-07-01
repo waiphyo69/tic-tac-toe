@@ -33,7 +33,7 @@
 
   View.prototype.makeMove = function ($square) {
     if (this.game.board.isEmptyPos($square.data("pos"))){
-      $square.find("span").text(this.game.currentPlayer);
+      $square.addClass(this.game.currentPlayer);
     } else {
       alert("Invalid Move!")
     }
@@ -43,7 +43,7 @@
     var $grid = $("<ul class='grid group'></ul>");
     for ( var row = 0; row < 3; row++) {
       for ( var col = 0; col < 3; col++){
-        var $square = $(("<li><span></span></li>"));
+        var $square = $(("<li></li>"));
         $square.data("pos", [row, col]);
         $grid.append($square);
       }

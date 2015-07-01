@@ -42,10 +42,19 @@ ul {
   background: yellow;
 }
 
-.grid span {
+.grid li:after{
+  content: "";
   position: absolute;
   display: block;
   bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.grid > li.x:after{
+  content: 'X';
+}
+
+.grid > li.o:after{
+  content: 'O';
 }
