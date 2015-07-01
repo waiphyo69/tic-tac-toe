@@ -5,7 +5,8 @@
 
   var View = TTT.View = function (game, $el) {
     this.game = game;
-    this.grid = $el;
+    this.container = $el;
+    this.setupBoard();
   };
 
   View.prototype.bindEvents = function () {
@@ -21,6 +22,6 @@
       $grid.append(square);
     };
 
-    return $grid;
+    this.container.append($grid);
   };
 })();
