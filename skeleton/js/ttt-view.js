@@ -23,7 +23,7 @@
 
   View.prototype.makeMove = function ($square) {
     if (this.game.board.isEmptyPos($square.data("pos"))){
-
+      $square.text(this.game.currentPlayer);
     } else {
       alert("Invalid Move!")
     }
