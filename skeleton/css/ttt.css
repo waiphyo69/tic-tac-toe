@@ -6,6 +6,12 @@ html, body, figure, ul, li {
   text-decoration: inherit;
 }
 
+.group:after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
 ul {
   list-style: none;
 }
@@ -16,6 +22,7 @@ ul {
   height: 90px;
   display: block;
   float: left;
+
 }
 
 .grid {

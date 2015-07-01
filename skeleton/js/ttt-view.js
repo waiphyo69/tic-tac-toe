@@ -15,7 +15,7 @@
   };
 
   View.prototype.setupBoard = function () {
-    var $grid = $("<ul class='grid'></ul>");
+    var $grid = $("<ul class='grid group'></ul>");
     var square = ( "<li></li>");
     for ( var i = 0; i < 9; i++) {
       $grid.append(square);
