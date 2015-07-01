@@ -13,6 +13,9 @@
 
     <script>
       // Write your code here.
+      var game = new TTT.Game();
+      var view = new TTT.View(game, $('body'));
+      view.grid.append(view.setupBoard());
     </script>
   </body>
 </html>
