@@ -1,3 +1,5 @@
+
+/* reset */
 html, body, figure, ul, li, span {
   margin: 0;
   padding: 0;
@@ -16,12 +18,15 @@ ul {
   list-style: none;
 }
 
+/* game */
 .grid {
   margin: auto;
   width: 300px;
   cursor: pointer;
   font-size: 100px;
   font-family: sans-serif;
+  background: #ccc;
+  border: 5px solid #000;
 }
 
 .grid > li {
@@ -31,7 +36,6 @@ ul {
   height: 90px;
   display: block;
   float: left;
-  background: #ccc;
 }
 
 .grid > li:hover {
