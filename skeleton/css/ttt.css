@@ -22,7 +22,6 @@ ul {
   cursor: pointer;
   font-size: 100px;
   font-family: sans-serif;
-  
 }
 
 .grid > li {
@@ -40,5 +39,9 @@ ul {
 }
 
 .grid span {
+  position: absolute;
   display: block;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
 }
