@@ -14,14 +14,19 @@
     var view = this;
     $(function(){
       view.container.on("click", "li", function(event){
+        var pos = $(this).data("pos");
         view.makeMove($(this));
+        view.game.playMove(pos);
       })
     })
   };
 
   View.prototype.makeMove = function ($square) {
-    var pos = $square.data("pos");
-    debugger
+    if (this.game.board.isEmptyPos($square.data("pos"))){
+
+    } else {
+      alert("Invalid Move!")
+    }
   };
 
   View.prototype.setupBoard = function () {
