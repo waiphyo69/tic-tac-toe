@@ -17,9 +17,21 @@
         var pos = $(this).data("pos");
         view.makeMove($(this));
         view.game.playMove(pos);
+        if (view.game.isOver()) {
+          view.handleGameOver();
+        }
       })
     })
   };
+
+  View.prototype.handleGameOver = function() {
+    if (this.game.board.winner() === null) {
+      alert("Tie");
+    } else {
+      this.game.swapTurn();
+      alert("Congratulations, " + this.game.currentPlayer + " wins!");
+    }
+  }
 
   View.prototype.makeMove = function ($square) {
     if (this.game.board.isEmptyPos($square.data("pos"))){
