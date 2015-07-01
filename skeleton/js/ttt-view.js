@@ -7,17 +7,21 @@
     this.game = game;
     this.container = $el;
     this.setupBoard();
+    this.bindEvents();
   };
 
   View.prototype.bindEvents = function () {
+    var view = this;
     $(function(){
-      this.container.on("click", "li", function(event){
-        TTT.Game.playMove();
+      view.container.on("click", "li", function(event){
+        view.makeMove($(this));
       })
     })
   };
 
   View.prototype.makeMove = function ($square) {
+    var pos = $square.data("pos");
+    debugger
   };
 
   View.prototype.setupBoard = function () {
