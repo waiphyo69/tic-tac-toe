@@ -1,4 +1,4 @@
-html, body, figure, ul, li {
+html, body, figure, ul, li, span {
   margin: 0;
   padding: 0;
   border: 0;
@@ -20,9 +20,13 @@ ul {
   margin: auto;
   width: 300px;
   cursor: pointer;
+  font-size: 100px;
+  font-family: sans-serif;
+  
 }
 
 .grid > li {
+  position: relative;
   border: 5px solid #000;
   width: 90px;
   height: 90px;
@@ -33,4 +37,8 @@ ul {
 
 .grid > li:hover {
   background: yellow;
+}
+
+.grid span {
+  display: block;
 }
