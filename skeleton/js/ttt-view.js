@@ -10,6 +10,11 @@
   };
 
   View.prototype.bindEvents = function () {
+    $(function(){
+      this.container.on("click", "li", function(event){
+        TTT.Game.playMove();
+      })
+    })
   };
 
   View.prototype.makeMove = function ($square) {
@@ -17,9 +22,12 @@
 
   View.prototype.setupBoard = function () {
     var $grid = $("<ul class='grid group'></ul>");
-    var square = ( "<li></li>");
-    for ( var i = 0; i < 9; i++) {
-      $grid.append(square);
+    for ( var row = 0; row < 3; row++) {
+      for ( var col = 0; col < 3; col++){
+        var $square = $(("<li></li>"));
+        $square.data("pos", [row, col]);
+        $grid.append($square);
+      }
     };
 
     this.container.append($grid);
