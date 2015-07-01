@@ -13,12 +13,7 @@
   View.prototype.bindEvents = function () {
     var view = this;
     view.$container.on("click", "li", function(event){
-      var pos = $(this).data("pos");
       view.makeMove($(this));
-      view.game.playMove(pos);
-      if (view.game.isOver()) {
-        view.handleGameOver();
-      }
     })
   };
 
@@ -34,6 +29,11 @@
   View.prototype.makeMove = function ($square) {
     if (this.game.board.isEmptyPos($square.data("pos"))){
       $square.addClass(this.game.currentPlayer);
+      var pos = $square.data("pos");
+      this.game.playMove(pos);
+      if (this.game.isOver()) {
+        this.handleGameOver();
+      }
     } else {
       alert("Invalid Move!")
     }
