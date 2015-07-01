@@ -1,0 +1,24 @@
+html, body, ul, li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  text-decoration: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.grid > li {
+  border: 5px solid #000;
+  width: 90px;
+  height: 90px;
+  display: block;
+  float: left;
+}
+
+.grid {
+  margin: auto;
+  width: 300px;
+}
